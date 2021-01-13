@@ -8,6 +8,7 @@ Dependencies or configurations are written already. You just get this repo.
 
 `
 $ git clone https://github.com/BONITA-KWKim/***
+`
 
 I assume you already have __anaconda__ and __docker__(with __docker compose__) installed 
 on your system. From there you need to create your virtual environment(venv).
