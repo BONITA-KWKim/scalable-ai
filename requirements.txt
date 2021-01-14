@@ -1,5 +1,8 @@
 absl-py>=0.10.0
 tqdm>=4.42.1
+gunicorn
+flask>=1.1.0
+redis>=3.5.0
 #h5py==2.10.0
 keras==2.1
 #tensorflow==1.14

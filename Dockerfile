@@ -9,18 +9,16 @@ RUN apk update \
     python3-dev
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
+
+FROM builder as sa_web
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY . .
-
-FROM builder as sa_web
-WORKDIR /usr/src/app
-ENV FLASK_APP=cervix/run_web_server.py
-ENV FLASK_RUN_HOST=0.0.0.0
+RUN ls .
 EXPOSE 5000
-CMD ["flask", "run"]
 
 FROM builder as sa_model
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-ENV FLASK_APP=cervix/run_model_server.py
-CMD ["flask", "run"]
+COPY . .
+CMD [ "python", "cervix/run_model_server.py" ]
