@@ -1,4 +1,4 @@
-import flask
+import flask from Flask
 
 app = flask.Flask(__name__)
 
@@ -13,8 +13,3 @@ def index():
 def predict():
     result = {"code": "0000"}
     return flask.jsonify(result)
-
-
-if __name__ == '__main__':
-    print("* Starting web server ...")
-    app.run() 

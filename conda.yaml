@@ -1,0 +1,14 @@
+name: sa_dev
+
+dependencies:
+  - python=3.6
+  - pip
+  - flask
+  - pip:
+    - h5py==2.10.0
+    - keras==2.1.0
+    - opencv-python
+    - scikit-image
+    - tensorflow==1.14.0
+    - absl-py
+    - tqdm

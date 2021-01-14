@@ -1,11 +1,26 @@
-version: '3'
+version: "3"
 
 services:
+  web:
+    image: titedios/sa_web
+    container_name: sa_web
+    ports:
+      - 5001:5001
+    networks:
+      - nginx_network
+      - redis_nt
+
+  model:
+    image: titedios/sa_model
+    container_name: sa_model
+    networks:
+      - redis_nt
+
   nginx:
     image: nginx:stable-alpine
     container_name: sa_nginx
     ports:
-      - 8000:80
+      - 5000:80
     volumes:
       - ./config/nginx/conf.d:/etc/nginx/conf.d
     networks:
